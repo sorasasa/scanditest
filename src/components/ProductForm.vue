@@ -9,7 +9,7 @@
             </section>
             <div class="form-group">
                 <label for="sku">SKU*: </label>
-                <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required/> <!-- :value=""-->
+                <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required/>
                 <p v-if="error">{{ error }}</p>
             </div>
             <div class="form-group">
