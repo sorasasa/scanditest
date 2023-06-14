@@ -71,6 +71,18 @@
       "Width": null,
       "Length": null,
       "id": 21
+    },
+    {
+      "Sku": "skuTest005",
+      "Name": "nameTest005",
+      "Price": 500,
+      "prdtype": "book",
+      "Size": null,
+      "Weight": 500,
+      "Height": null,
+      "Width": null,
+      "Length": null,
+      "id": 22
     }
   ]
 }
