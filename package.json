@@ -2,7 +2,7 @@
   "name": "scanditest",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://scandiweb-test-neon.vercel.app/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
