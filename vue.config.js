@@ -6,7 +6,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   
   devServer: { /**important*/
-    proxy: 'http://localhost:4000',
+    proxy: 'http://localhost:3000/products',
     before: historyApiFallback
   }
 })
