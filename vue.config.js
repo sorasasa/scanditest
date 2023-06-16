@@ -6,7 +6,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   
   devServer: { /**important*/
-    proxy: 'http://localhost:3000/products',
+    headers: { "Access-Control-Allow-Origin": "*" },
+   
     before: historyApiFallback
   }
 })
