@@ -9,7 +9,7 @@ module.exports = defineConfig({
   devServer: { /**important*/
     before: historyApiFallback,
     headers: { "Access-Control-Allow-Origin": "*" },
-    proxy: 'http://localhost:3000/products',
-  }
+    //proxy: 'http://localhost:3000/products',
+    }
   }
 })
