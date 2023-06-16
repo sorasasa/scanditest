@@ -6,8 +6,9 @@ module.exports = defineConfig({
   transpileDependencies: true,
   
   devServer: { /**important*/
-    headers: { "Access-Control-Allow-Origin": "*" },
+    before: historyApiFallback,
+    headers: { "Access-Control-Allow-Origin": "*" }
    
-    before: historyApiFallback
+    
   }
 })
