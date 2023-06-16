@@ -5,10 +5,10 @@ module.exports = defineConfig({
   publicPath: "/",
   transpileDependencies: true,
   
+  configureWebpack:{
   devServer: { /**important*/
     before: historyApiFallback,
-    headers: { "Access-Control-Allow-Origin": "*" }
-   
-    
+    headers: { "Access-Control-Allow-Origin": "*" } 
+  }
   }
 })
