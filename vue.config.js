@@ -8,8 +8,11 @@ module.exports = defineConfig({
   configureWebpack:{
   devServer: { /**important*/
     before: historyApiFallback,
-    headers: { "Access-Control-Allow-Origin": "*" },
-    //proxy: 'http://localhost:3000/products',
+    headers: {  "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization"
+  }
+    
     }
   }
 })
