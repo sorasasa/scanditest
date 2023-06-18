@@ -11,6 +11,6 @@ module.exports = defineConfig({
     "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization" }
     },
-    //proxy:"http://localhost:3000/products"
+    proxy:"http://localhost:3000/products"
   
 })
