@@ -34,7 +34,7 @@ export default {
     },
     methods:{
         async getProducts(){
-            const req = await fetch("http://localhost:3000/products");
+            const req = await fetch("https://localhost:3000/products");
 
             const data = await req.json(); /** await for the req and transform into json */
 
@@ -44,7 +44,7 @@ export default {
 
         },
         async massDelete(id) {
-            const req = await fetch(`http://localhost:3000/products/${id}`,{
+            const req = await fetch(`https://localhost:3000/products/${id}`,{
             method: "DELETE"
             });
             const res = await req.json();
