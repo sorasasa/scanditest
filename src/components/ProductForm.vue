@@ -102,7 +102,7 @@
              /**will turn the data into string for the server */
              const dataJson = JSON.stringify(data); 
              /**requiring */
-             const req = await fetch("https://localhost:3000/products", {
+             const req = await fetch("http://localhost:3000/products", {
                 method: "POST",
                 headers: {"Content-type": "application/json"},
                 body: dataJson,

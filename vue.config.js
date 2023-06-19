@@ -7,10 +7,13 @@ module.exports = defineConfig({
   
   devServer: { /**important*/
     before: historyApiFallback,
-    headers: { "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization" },
-    proxy:"http://localhost:3000/products"
+    proxy:{
+      '/api':{
+        target:'http://localhost:3000/products',
+        ws: true,
+        changeOrigin: true
+      }
+    }
     },
   
 })
