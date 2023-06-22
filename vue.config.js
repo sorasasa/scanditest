@@ -6,7 +6,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   
   devServer: { /**important*/
-    before: historyApiFallback,
+  onBeforeSetupMiddleware: historyApiFallback,
     proxy:{
       '/api':{
         target:'http://localhost:3000/products',
