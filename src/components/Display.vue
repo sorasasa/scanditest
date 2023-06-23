@@ -34,7 +34,7 @@ export default {
     },
     methods:{
         async getProducts(){
-            const req = await fetch("https://scandiweb-test-neon.vercel.app/db/products");
+            const req = await fetch("https://products-api-topaz.vercel.app/products");
 
             const data = await req.json(); /** await for the req and transform into json */
 
