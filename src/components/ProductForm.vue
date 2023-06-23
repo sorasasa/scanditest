@@ -86,7 +86,7 @@
           }
         },
         methods: {
-          async createProduct(e){
+          createProduct(e){
              e.preventDefault();
              const data = {
                 Sku: this.sku,
@@ -100,29 +100,31 @@
                 Length: this.Length
              }
              /**will turn the data into string for the server */
-             const dataJson = JSON.stringify(data); 
+             const dataJson = JSON.stringify(data);
              /**requiring */
-             const req = await fetch("https://products-api-topaz.vercel.app/products", {
+             const req = fetch("<https://products-api-topaz.vercel.app/products>", {
                 method: "POST",
                 headers: {"Content-type": "application/json"},
                 body: dataJson,
-             });
-             const res = await req.json(); /**show the response */
-             
-             //clean the fields
-             this.Sku ="";
-             this.Name ="";
-             this.Price ="";
-             this.prdType ="";
-             this.Size ="";
-             this.Weight ="";
-             this.Height ="";
-             this.Width ="";
-             this.Length ="";
+             }).then(res => res.json()) //show the response
+               .then(res => {
+                  //clean the fields
+                  this.Sku ="";
+                  this.Name ="";
+                  this.Price ="";
+                  this.prdType ="";
+                  this.Size ="";
+                  this.Weight ="";
+                  this.Height ="";
+                  this.Width ="";
+                  this.Length ="";
 
-             this.$router.push('/');
+                  this.$router.push('/');
+               })
+               .catch(err => console.error(err));
           },
         },
+
     }
     </script>
     
