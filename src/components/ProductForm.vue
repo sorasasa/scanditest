@@ -121,7 +121,7 @@
              this.Width ="";
              this.Length ="";
 
-             this.$router.go(-1);
+             this.$router.go('/');
           },
         },
 
