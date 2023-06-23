@@ -44,7 +44,7 @@ export default {
 
         },
         async massDelete(id) {
-            const req = await fetch(`https://scandiweb-test-neon.vercel.app/db/products/${id}`,{
+            const req = await fetch(`https://products-api-topaz.vercel.app/products/${id}`,{
             method: "DELETE"
             });
             const res = await req.json();

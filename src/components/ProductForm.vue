@@ -102,7 +102,7 @@
              /**will turn the data into string for the server */
              const dataJson = JSON.stringify(data); 
              /**requiring */
-             const req = await fetch("https://scandiweb-test-neon.vercel.app/db/products", {
+             const req = await fetch("https://products-api-topaz.vercel.app/products", {
                 method: "POST",
                 headers: {"Content-type": "application/json"},
                 body: dataJson,
