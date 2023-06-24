@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/db/(.*)",
-        "destination": "/db/index.js"
-      }
-    ]
-  }

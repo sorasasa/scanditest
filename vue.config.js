@@ -8,9 +8,9 @@ module.exports = defineConfig({
   devServer: { /**important*/
   onBeforeSetupMiddleware: historyApiFallback,
     proxy:{
-      '/api':{
-        target:'http://localhost:3000/products',
-        ws: true,
+      '/products':{
+        target:'https://products-api-topaz.vercel.app/products',
+        //ws: true,
         changeOrigin: true
       }
     }

@@ -82,7 +82,6 @@
             prdType: null,
             isRequired: true,
             //error:"" //  
-            
           }
         },
         methods: {
