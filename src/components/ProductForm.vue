@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Name*: </label>
-                <input type="text" name="Name" id="Name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required/>
+                <input type="text" name="Name" id="name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required/>
             </div>
             <div class="form-group">
                 <label for="price">Price($)*: </label>
