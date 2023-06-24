@@ -119,7 +119,7 @@
              this.Width ="";
              this.Length ="";
 
-             this.$router.go('/');
+             this.$router.push('/');
           },
         },
 
