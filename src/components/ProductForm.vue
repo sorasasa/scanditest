@@ -50,13 +50,13 @@
             <div id="Furniture" v-if="prdType === 'furniture'">
                 <div class="form-control">
                     <label for="height">Height (cm)* </label>
-                    <input type="number"  id="#height" name="Height" placeholder="height(cm)" v-model="Height" :required="isRequired"/>
+                    <input type="number"  id="height" name="Height" placeholder="height(cm)" v-model="Height" :required="isRequired"/>
                     <br>
                     <label for="width">Width (cm)* </label>
-                    <input type="number"  id="#width" name="Width" placeholder="width(cm)" v-model="Width" :required="isRequired"/>
+                    <input type="number"  id="width" name="Width" placeholder="width(cm)" v-model="Width" :required="isRequired"/>
                     <br>
                     <label for="length">Length (cm)* </label>
-                    <input type="number" id="#length" name="Length"  placeholder="length(cm)" v-model="Length" :required="isRequired"/>
+                    <input type="number" id="length" name="Length"  placeholder="length(cm)" v-model="Length" :required="isRequired"/>
                     <br/>
                     <p class="product_description">Please, provide dimensions.</p>
                 </div>
@@ -85,7 +85,6 @@
             
           }
         },
-        /**CODIGO ORIGINAL*/
         methods: {
           async createProduct(e){
              e.preventDefault();
