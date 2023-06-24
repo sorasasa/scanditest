@@ -118,8 +118,7 @@
              this.Height ="";
              this.Width ="";
              this.Length ="";
-
-             this.$refs.form.reset();
+            
              this.$router.push('/');
           },
         },
