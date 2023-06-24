@@ -2,7 +2,7 @@
     <div>
         <form id="product_form" name="formMain" @submit="createProduct" >
             <section>
-                <button type="submit" value="submit">SAVE</button>
+                <button type="submit" value="submit">Save</button>
                 <router-link to="/">
                 <button type="reset" formnovalidate>CANCEL</button>
                 </router-link>
