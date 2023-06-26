@@ -7,12 +7,12 @@ module.exports = defineConfig({
   
   devServer: { /**important*/
   onBeforeSetupMiddleware: historyApiFallback,
-    proxy:{
+    /*proxy:{
       '/products':{
         target:'https://products-api-topaz.vercel.app/products',
         //ws: true,
         changeOrigin: true
       }
-    }
+    }*/
     },
 })
