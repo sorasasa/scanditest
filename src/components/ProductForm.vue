@@ -64,9 +64,9 @@
             <div class="required_fields">*required fields</div>
         </form>
     </div>
-    </template>
+</template>
     
-    <script>
+<script>
     export default {
         name:"ProductForm",
         data() {
@@ -122,11 +122,10 @@
              this.$router.push('/');
           },
         },
-
     }
-    </script>
+</script>
     
-    <style scoped>
+<style scoped>
     section {
         display: flex;
         margin-left: 250px;
@@ -175,4 +174,4 @@
     .form-control input {
         margin: 10px;
     }
-    </style>
+</style>
