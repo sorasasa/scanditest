@@ -10,9 +10,9 @@
             <div class="form-group">
                 <label for="sku">SKU*: </label>
                 <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required/>
-                <p v-if="invalid">sku already in use</p>
-                <p v-else-if="valid">sku disponivel p uso</p>
-                <p v-else-if="error">erro ao consultar a api</p>
+                <p v-if="invalid" style="color: red;">Sku already in use, please try another option</p>
+                <p v-else-if="valid" style="color:greenyellow;">Sku available for use</p>
+                <p v-else-if="error" style="color:maroon;">*Failed to query the API*</p>
             </div>
             <div class="form-group">
                 <label for="name">Name*: </label>
@@ -84,36 +84,36 @@ import axios from "axios";
             Length: null,
             prdType: null,
             isRequired: true,
-            error: null, //
-            valid: null, //
-            invalid: null //
+            error: null, 
+            valid: null, 
+            invalid: null 
           }
         },
         watch:{
             sku(value){
-                //limpa os estados anteriores
+                //clean the previous status
                 this.error = false;
                 this.valid = false;
                 this.invalid = false;
 
-                //verifica se o valor é vazio
+                //check if the value is empty
                 if(!value){
                     return;
                 }
-                //faz uma requisição de GET para a API com o valor do input
-                axios //lembrar de importar 
+                //makes a GET requisition for the API with the input value
+                axios 
                 .get(`https://products-api-topaz.vercel.app/products?Sku=${value}`)
                 .then((response)=>{
-                    //se a resposta foi um array vazio significa q o sku nao existe na api
+                    //if the response was an empty array it means that the sku doesnt exists in the api
                     if(response.data.length === 0){
                         this.valid = true;
                     } else{
-                    //se a resposta foi um array nao vazio significa q o usuario(sku) existe na api
-                        this.invalid = true
+                    //if the response wasn't an empty array it means that the sku already exists in the api
+                        this.invalid = true;
                     }
                 })
                 .catch((error)=>{
-                    //se ocorrer algum erro na requisição, define o estado de erro 
+                    //if some error arises in the requisition, it defines the error status
                     this.error = true;
                 }) 
             }
@@ -134,6 +134,13 @@ import axios from "axios";
              }
              /**will turn the data into string for the server */
              const dataJson = JSON.stringify(data); 
+
+             if(this.invalid || this.error){
+             //prevents sending the data
+                alert("Is not possible to send the form");
+                return; //leaves the method
+             }
+
              /**requiring */
              const req = await fetch("https://products-api-topaz.vercel.app/products", {
                 method: "POST",
@@ -155,6 +162,7 @@ import axios from "axios";
             
              this.$router.push('/');
           },
+
         },
     }
 </script>
