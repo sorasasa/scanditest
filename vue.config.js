@@ -6,13 +6,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   
   devServer: { /**important*/
-  onBeforeSetupMiddleware: historyApiFallback,
-    /*proxy:{
-      '/products':{
-        target:'https://products-api-topaz.vercel.app/products',
-        //ws: true,
-        changeOrigin: true
-      }
-    }*/
-    },
+  onBeforeSetupMiddleware: historyApiFallback
+  },
 })

@@ -10,7 +10,9 @@
             <div class="form-group">
                 <label for="sku">SKU*: </label>
                 <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required/>
-                <!--p v-if="error">{{ error }}</p-->
+                <p v-if="invalid">sku already in use</p>
+                <p v-else-if="valid">sku disponivel p uso</p>
+                <p v-else-if="error">erro ao consultar a api</p>
             </div>
             <div class="form-group">
                 <label for="name">Name*: </label>
@@ -67,13 +69,14 @@
 </template>
     
 <script>
+import axios from "axios"; 
     export default {
         name:"ProductForm",
         data() {
           return {
             sku: null,
             Name: null,
-            Price : null,
+            Price: null,
             Size: null,
             Weight: null,
             Height: null,
@@ -81,8 +84,39 @@
             Length: null,
             prdType: null,
             isRequired: true,
-            //error:"" //  
+            error: null, //
+            valid: null, //
+            invalid: null //
           }
+        },
+        watch:{
+            sku(value){
+                //limpa os estados anteriores
+                this.error = false;
+                this.valid = false;
+                this.invalid = false;
+
+                //verifica se o valor é vazio
+                if(!value){
+                    return;
+                }
+                //faz uma requisição de GET para a API com o valor do input
+                axios //lembrar de importar 
+                .get(`https://products-api-topaz.vercel.app/products?Sku=${value}`)
+                .then((response)=>{
+                    //se a resposta foi um array vazio significa q o sku nao existe na api
+                    if(response.data.length === 0){
+                        this.valid = true;
+                    } else{
+                    //se a resposta foi um array nao vazio significa q o usuario(sku) existe na api
+                        this.invalid = true
+                    }
+                })
+                .catch((error)=>{
+                    //se ocorrer algum erro na requisição, define o estado de erro 
+                    this.error = true;
+                }) 
+            }
         },
         methods: {
           async createProduct(e){
