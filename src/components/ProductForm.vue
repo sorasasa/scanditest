@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="sku">SKU*: </label>
                 <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required v-validate rules=“/^[A-Za-z0-9]+$/”/>
-                <span>{{ this.$validator.getError("sku") }}</span>
+                <!--span>{{ this.$validator.getError("sku") }}</span-->
                 <p v-if="invalid" style="color: red;">Sku already in use, please try another option</p>
                 <p v-else-if="valid" style="color: green;">Sku available for use</p>
                 <p v-else-if="error" style="color:maroon;">*Failed to query the API*</p>
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label for="name">Name*: </label>
                 <input type="text" name="Name" id="name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required v-validate rules=“/^[A-Za-z0-9]+$/”/>
-                <span>{{ this.$validator.getError("Name") }}</span>
+                <!--span>{{ this.$validator.getError("Name") }}</span-->
             </div>
         
             <div class="form-group">
