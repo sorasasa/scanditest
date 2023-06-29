@@ -9,19 +9,16 @@
             </section>
             <div class="form-group">
                 <label for="sku">SKU*: </label>
-                <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="#sku" v-model="sku" required v-validate rules=“/^[A-Za-z0-9]+$/”/>
+                <input type="text" name="sku" id="sku" minlength="4" maxlength="10" placeholder="please use letters and numbers" v-model="sku" required pattern="[A-Za-z0-9]+"/>
                 <!--span>{{ this.$validator.getError("sku") }}</span-->
-                <p v-if="invalid" style="color: red;">Sku already in use, please try another option</p>
-                <p v-else-if="valid" style="color: green;">Sku available for use</p>
+                <p v-if="invalid" style="color: red;">Sku already in use, please try another option.</p>
+                <p v-else-if="valid" style="color: green;">Sku available for use.</p>
                 <p v-else-if="error" style="color:maroon;">*Failed to query the API*</p>
-
             </div>
             <div class="form-group">
                 <label for="name">Name*: </label>
-                <input type="text" name="Name" id="name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required v-validate rules=“/^[A-Za-z0-9]+$/”/>
-                <!--span>{{ this.$validator.getError("Name") }}</span-->
+                <input type="text" name="Name" id="name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required pattern="[A-Za-z0-9 ]+"/>
             </div>
-        
             <div class="form-group">
                 <label for="price">Price($)*: </label>
                 <input type="number" name="price" id="price" placeholder="#price" v-model="Price" required/>
