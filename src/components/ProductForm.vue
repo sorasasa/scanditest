@@ -9,7 +9,7 @@
             </section>
             <div class="form-group">
                 <label for="sku">SKU*: </label>
-                <input type="text" name="sku" id="sku" minlength="4" placeholder="ex: skuTest000" v-model="sku" required pattern="[A-Za-z0-9]{10,}"/>
+                <input type="text" name="sku" id="sku" minlength="4" placeholder="ex: skuTest000" v-model="sku" required pattern="[A-Za-z0-9]{6,}"/>
                 <p v-if="invalid" style="color: red;">Sku already in use, please try another option.</p>
                 <p v-else-if="valid" style="color: green;">Sku available for use.</p>
                 <p v-else-if="error" style="color:maroon;">*Failed to query the API*</p>
