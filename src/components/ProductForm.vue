@@ -17,11 +17,11 @@
             </div>
             <div class="form-group">
                 <label for="name">Name*: </label>
-                <input type="text" name="Name" id="name" minlength="4" maxlength="11" placeholder="#name" v-model="Name" required pattern="[A-Za-z0-9 ]+"/>
+                <input type="text" name="Name" id="name" minlength="4" maxlength="11" v-model="Name" required pattern="[A-Za-z0-9 ]+"/>
             </div>
             <div class="form-group">
                 <label for="price">Price($)*: </label>
-                <input type="number" name="price" id="price" placeholder="#price" v-model="Price" required/>
+                <input type="number" name="price" id="price" step="0.01" v-model="Price" required/>
             </div>
             
             <div class="form-group">
@@ -37,7 +37,7 @@
             <div id="DVD" v-if="prdType === 'dvd'">
                 <div class="form-control">
                     <label for="size">Size (mb)* </label>
-                    <input type="number" id="size" v-model="Size" placeholder="size(MB)" :required="isRequired"> 
+                    <input type="number" id="size" v-model="Size" placeholder="size(MB)" step="0.01" :required="isRequired"> 
                     <p class = "product_description">Please, provide size.</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div id="Book" v-if="prdType === 'book'">
                 <div class="form-control">
                     <label for="weight">Weight (kg)* </label>
-                    <input type="number" id="weight" name="Weight" v-model="Weight" placeholder="weight(kg)" :required="isRequired"/>
+                    <input type="number" id="weight" name="Weight" v-model="Weight" placeholder="weight(kg)" step="0.01" :required="isRequired"/>
                     <p class = "product_description">Please, provide weight.</p>
                 </div>
             </div>
@@ -53,13 +53,13 @@
             <div id="Furniture" v-if="prdType === 'furniture'">
                 <div class="form-control">
                     <label for="height">Height (cm)* </label>
-                    <input type="number"  id="height" name="Height" placeholder="height(cm)" v-model="Height" :required="isRequired"/>
+                    <input type="number"  id="height" name="Height" placeholder="height(cm)" v-model="Height" step="0.01" :required="isRequired"/>
                     <br>
                     <label for="width">Width (cm)* </label>
-                    <input type="number"  id="width" name="Width" placeholder="width(cm)" v-model="Width" :required="isRequired"/>
+                    <input type="number"  id="width" name="Width" placeholder="width(cm)" v-model="Width" step="0.01" :required="isRequired"/>
                     <br>
                     <label for="length">Length (cm)* </label>
-                    <input type="number" id="length" name="Length"  placeholder="length(cm)" v-model="Length" :required="isRequired"/>
+                    <input type="number" id="length" name="Length"  placeholder="length(cm)" v-model="Length" step="0.01" :required="isRequired"/>
                     <br/>
                     <p class="product_description">Please, provide dimensions.</p>
                 </div>
