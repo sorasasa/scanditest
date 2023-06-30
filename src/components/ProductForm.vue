@@ -149,6 +149,8 @@ import axios from "axios";
              });
              const res = await req.json(); /**show the response */
              
+             console.log("Headers:", headers);
+             console.log("Body:", dataJson)
              //clean the fields
              this.Sku ="";
              this.Name ="";
@@ -161,7 +163,7 @@ import axios from "axios";
              this.Length ="";
             
              this.$router.push('/');
-             console.log(req);
+            
           },
 
         },
