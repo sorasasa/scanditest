@@ -161,6 +161,7 @@ import axios from "axios";
              this.Length ="";
             
              this.$router.push('/');
+             console.log(req);
           },
 
         },
