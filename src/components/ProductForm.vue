@@ -148,9 +148,7 @@ import axios from "axios";
                 body: dataJson,
              });
              const res = await req.json(); /**show the response */
-             
-             console.log("Headers:", headers);
-             console.log("Body:", dataJson)
+            
              //clean the fields
              this.Sku ="";
              this.Name ="";
