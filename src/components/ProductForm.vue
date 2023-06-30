@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form id="product_form" name="formMain" @submit="createProduct" >
+        <form id="product_form" name="formMain" @submit="createProduct">
             <section>
                 <button type="submit" value="submit">Save</button>
                 <router-link to="/">
