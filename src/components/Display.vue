@@ -1,7 +1,9 @@
 <template>
     <div>
         <section>
-            <router-link to="/add"><button id="add-btn">ADD</button></router-link>
+            <router-link to="/add">
+                <button id="add-btn">ADD</button>
+            </router-link>
             <button id="delete-product-btn" @click="reloadPag">MASS DELETE</button>
         </section>
         <div class="container">
